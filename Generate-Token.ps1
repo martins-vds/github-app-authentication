@@ -29,7 +29,7 @@ function Generate-AppToken {
 
     $payload = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes((ConvertTo-Json -InputObject @{
                     iat = [System.DateTimeOffset]::UtcNow.AddSeconds(-10).ToUnixTimeSeconds()
-                    exp = [System.DateTimeOffset]::UtcNow.AddMinutes(10).ToUnixTimeSeconds()
+                    exp = [System.DateTimeOffset]::UtcNow.AddMinutes(1).ToUnixTimeSeconds()
                     iss = $ClientId 
                 }))).TrimEnd('=').Replace('+', '-').Replace('/', '_');
 
