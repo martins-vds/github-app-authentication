@@ -22,7 +22,7 @@ This repository contains a script to generate a GitHub App token with a specific
 3. Run the script `generate-token.ps1` with the required parameters:
 
     ```powershell
-    .\generate-token.ps1 -AppId <YourAppId> -PrivateKeyPath <PathToYourPrivateKey> -Repository <YourRepositoryName>
+    .\generate-token.ps1 -AppClientId <YourAppId> -AppPrivateKeyPath <PathToYourPrivateKey> -Repository <YourRepositoryName>
     ```
 
     - Replace `<YourAppId>` with your GitHub App ID.
@@ -38,6 +38,6 @@ This repository contains a script to generate a GitHub App token with a specific
     ```powershell
     $repo=octocat/hello-world
     $dir=hello-world
-    $token=.\generate-token.ps1 -AppId 12345 -PrivateKeyPath .\private-key.pem -Repository $repo
+    $token=.\generate-token.ps1 -AppClientId 12345 -AppPrivateKeyPath .\private-key.pem -Repository $repo
     git clone https://x-access-token:$($token)@github.com/$($repo).git $dir
     ```
